@@ -1,0 +1,45 @@
+{
+  "name": "anti-nft-links-bot",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "author": {
+    "name": "devilreef",
+    "email": "hello@femboy.page",
+    "url": "https://femboy.page"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "dev": "cross-env NODE_ENV=development tsx ./src/index.ts",
+    "lint": "eslint -c eslint.config.mjs .",
+    "prepare": "husky || true",
+    "start": "cross-env NODE_ENV=production node ./dist/index.js",
+    "commitlint": "commitlint --edit"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/common-tags": "^1.8.4",
+    "@types/node": "^22.10.5",
+    "eslint": "^9.17.0",
+    "eslint-plugin-perfectionist": "^4.6.0",
+    "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "neostandard": "^0.12.0",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.0"
+  },
+  "dependencies": {
+    "common-tags": "^1.8.2",
+    "cross-env": "^7.0.3",
+    "env-var": "^7.5.0",
+    "gramio": "^0.2.2",
+    "winston": "^3.17.0"
+  }
+}
