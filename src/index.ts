@@ -14,7 +14,10 @@ bot.on('message', async (context) => {
   if (context.hasText() && config.nftLinkRegexps.some((regexp) => regexp.test(context.text))) {
     await context.reply(format`
       🥺 ${bold('Please, do not send NFT links in comments')}
-    `).catch(() => {})
+    `).then((message) => {
+      setTimeout(() => message.delete().catch(() => {}), 5_000)
+    })
+      .catch(() => {})
 
     await context.delete().catch(() => {})
   }
