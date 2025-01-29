@@ -15,4 +15,5 @@ export default {
   },
   chatIds: env.get('CHAT_IDS').default('').asString().split(',').map((id) => parseInt(id)),
   botToken: env.get('BOT_TOKEN').required().asString(),
+  nftLinkRegexps: env.get('NFT_LINK_REGEXPS').default('').asString().split(';').map((regexp) => new RegExp(regexp)),
 }

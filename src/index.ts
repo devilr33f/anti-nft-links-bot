@@ -11,7 +11,7 @@ bot.on('message', async (context) => {
   if (!config.chatIds.includes(context.chat.id)) return
   if (!context.hasReplyMessage() || context.replyMessage.from?.id !== 777000) return
 
-  if (context.hasText() && /t\.me\/nft\/([a-zA-Z0-9]+-(\d+))/.test(context.text)) {
+  if (context.hasText() && config.nftLinkRegexps.some((regexp) => regexp.test(context.text))) {
     await context.reply(format`
       🥺 ${bold('Please, do not send NFT links in comments')}
     `).catch(() => {})
